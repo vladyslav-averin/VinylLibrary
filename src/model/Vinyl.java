@@ -33,9 +33,7 @@ public class Vinyl {
         this.toBeRemoved = false;
     }
 
-    // --- Synchronized Delegate Methods (State Pattern & Thread Safety) ---
-    // The synchronized keyword prevents race conditions when the model.UserSimulator
-    // and the GUI attempt to modify the same vinyl at the same time.
+    // The synchronized keyword prevents race conditions when the model.UserSimulator and the GUI attempt to modify the same vinyl at the same time
 
     public synchronized void borrow(String user) {
         state.borrow(this, user);
@@ -52,8 +50,6 @@ public class Vinyl {
     public synchronized void remove() {
         state.remove(this);
     }
-
-    // --- State and Property Modifiers ---
 
     // Changes the state and notifies listeners (Observer Pattern)
     public synchronized void setState(VinylState newState) {
@@ -74,7 +70,7 @@ public class Vinyl {
         support.firePropertyChange("toBeRemoved", old, toBeRemoved);
     }
 
-    // --- Getters and Setters ---
+    // Getters and Setters
 
     public synchronized String getBorrower() {
         return borrower;
@@ -108,7 +104,7 @@ public class Vinyl {
         return state;
     }
 
-    // --- Observer Pattern Methods ---
+    // Observer Pattern Methods
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         support.addPropertyChangeListener(listener);
@@ -118,7 +114,6 @@ public class Vinyl {
         support.removePropertyChangeListener(listener);
     }
 
-    // --- Helper Method ---
     // Formats the status for the View to display in the table
     public synchronized String getStatus() {
         String baseStatus = state.getStatusString();

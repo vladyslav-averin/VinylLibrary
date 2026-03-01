@@ -14,7 +14,7 @@ public class MainViewModel implements PropertyChangeListener {
     private VinylLibrary model;
     private Session session;
 
-    // Special list for JavaFX. When it changes, the table in the GUI updates automatically
+    // Special list for JavaFX. When it changes, the table in the GUI updates automatically.
     private ObservableList<Vinyl> vinylList;
 
     public MainViewModel(VinylLibrary model, Session session) {
