@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainViewController">
+
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
+    </padding>
+
+    <TableView fx:id="vinylTable" VBox.vgrow="ALWAYS" prefHeight="400.0" prefWidth="800.0">
+        <columns>
+            <TableColumn fx:id="titleColumn" prefWidth="180.0" text="Title" />
+            <TableColumn fx:id="artistColumn" prefWidth="150.0" text="Artist" />
+            <TableColumn fx:id="yearColumn" prefWidth="70.0" text="Year" />
+            <TableColumn fx:id="statusColumn" prefWidth="200.0" text="Status / State" />
+            <TableColumn fx:id="borrowerColumn" prefWidth="100.0" text="Borrower" />
+            <TableColumn fx:id="reserverColumn" prefWidth="100.0" text="Reserver" />
+        </columns>
+    </TableView>
+
+    <HBox spacing="15.0" alignment="CENTER_RIGHT">
+        <Button text="Reserve" onAction="#onReserveClicked" />
+        <Button text="Borrow" onAction="#onBorrowClicked" />
+        <Button text="Return" onAction="#onReturnClicked" />
+        <Button text="Remove" onAction="#onRemoveClicked" />
+    </HBox>
+
+</VBox>
